@@ -1,0 +1,157 @@
+body {
+	background-color: #F4F4F4;
+
+}
+
+h1{
+	text-align: center;
+	font-size: 7em;
+	color: #DD9989;
+	opacity: 0.5;
+	margin-bottom: 55px;
+
+}
+
+.form-control {
+	max-width:  550px;
+	height: 65px;
+	margin: auto;
+	border-radius: 0;
+	padding-top: 6px;
+	padding-left: 45px;
+	border: 0;
+	font-size:  23px;
+}
+
+.form-control:focus {
+	border: none;
+	box-shadow: -5px 5px 10px rgba(0,0,0,0.5);
+	border-bottom: 1px solid #ededed;
+}
+
+.todos-container {
+	width: 550px;
+	margin: auto;
+	background-color: #ffffff;
+    min-height: 65px;
+}
+
+#todo {
+	min-height: 65px;
+	border-top: 1px solid #ededed;
+	position: relative;
+	font-size: 23px;
+	word-wrap: break-word;
+}
+
+#todo-text {
+	padding: 15px 35px 15px 15px;
+	margin: 0;
+	margin-left: 30px;
+	max-width: 550px;
+	opacity: 0.9;
+	min-height: 65px;
+}
+
+input::-webkit-input-placeholder {
+	opacity: 0.5;
+    font-size: 28px;
+    font-style:oblique;
+} 
+
+/*======styles for edit========*/
+
+#edit-input {
+	min-height: 60px;
+	border-bottom: 1px solid #ededed;
+	position: relative;
+	font-size: 23px;
+}
+
+#edit-message {
+	border: 1px solid #303030;
+}
+
+#edit-message:focus {
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.7) ;
+	border: 1px solid #303030;
+}
+
+/*======styles for hint========*/
+
+#hint {
+	text-align: center;
+	margin: 70px;
+	font-size: 10px;
+	color: #BCBCBC;
+}
+
+#hint p {
+	margin-bottom: 5px;
+}
+
+/*======styles for buttons=====*/ 
+
+.glyphicon-remove-circle {
+	float: right;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	position: relative;
+	top: -43px;
+	color: #DD9989;
+}
+
+.glyphicon-unchecked {
+	float: left;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	color: #A1EDA5;
+	top: -43px;
+	margin-left: 15px;
+}
+
+.glyphicon-check {
+	float: left;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	color: #0D8413;
+	top: -43px;
+	margin-left: 15px;
+	size: 140%;
+}
+
+.glyphicon-edit {
+	float: left;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	color: #303030;
+	top: -43px;
+	margin-left: 15px;
+	size: 140%;
+}
+
+.more-red {
+	color: #C61313;	
+}
+
+.more-green {
+	color: #0D8413;
+}
+
+
+.shadow{
+	box-shadow: -5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.line-through {
+	opacity: 0.3  !important; 
+	text-decoration:line-through;
+}
+
+
+

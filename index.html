@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+  	<title>todos app</title>
+  		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    	<link rel="stylesheet" href="style.css">
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+ 
+    	<script src="app.js"></script>
+  </head>
+	
+  <body>
+ 
+	<h1>todos</h1>
+
+	<div  ng-controller="MyController" > 
+
+	    <input type="text" class="form-control shadow " ng-model="text" ng-disabled="editText"  
+	    	   ng-keypress="addTodo(text)" placeholder="Whats needs to be done? " >
+	    
+	    <div class="todos-container shadow "  ng-repeat="todo in todos">
+			<div id="todo" ng-mouseenter="showButtons()" ng-mouseleave="hideButtons()">
+
+				<input type="text" ng-if="todo.edit" class="form-control" 
+					   id="edit-message" ng-model="editText" ng-keypress="addTodo(editText)"
+					   ng-blur="escapeTodo(editText)" autofocus>
+
+				<p ng-if="!todo.edit" ng-class="doneText " id="todo-text" ng-click="escapeTodo(editText)"  
+				   ng-dblclick="editTodo(todo.text)">{{todo.text}}</p>
+
+				<span class="glyphicon glyphicon-unchecked {{doneButtonClass}}" ng-show="showButton  && !editText" 
+					  ng-if="!todo.done && !todo.edit" ng-click="doneTodo()" ng-mouseenter="addDoneButtonClass()" 
+					  ng-mouseleave="removeDoneButtonClass()"></span> 
+
+				<span class="glyphicon glyphicon-check" ng-if="(todo.done && !todo.edit)" ng-show="!editText"  ng-click="doneTodo()"></span> 
+				<span class="glyphicon glyphicon-edit " ng-if="todo.edit"></span>		
+
+				<span class="glyphicon glyphicon-remove-circle {{deleteButtonClass}}" ng-show="showButton && !editText"  
+					  ng-click="deleteTodo()" ng-mouseenter="addDeleteButtonClass()"
+					  ng-mouseleave="removeDeleteButtonClass()" ng-if="(!todo.done && !todo.edit) || todo.done"></span> 
+					  
+			</div>
+		</div>
+
+		<div id="hint" >
+			<p>Double-click to edit a todo</p>
+			<p>Created by Oleksandr Kostryba</p>
+		</div>
+	</div>
+  </body>
+</html>
